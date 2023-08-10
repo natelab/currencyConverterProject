@@ -14,7 +14,7 @@ def run():
 
     feedback = requests.get(f"https://api.frankfurter.app/latest?amount={value}&from={intial_currency}&to={end_currency}")
     code = "Status Code: ",feedback.status_code
-    result = f"{value} {intial_currency} is {feedback.json()['rates'][end_currency]} {end_currency}"
+    result = f"{value} {intial_currency} is {feedback.json()['rates'][end_currency]} {end_currency}" #The "feedback.json" will return a json object for the request
     display = code, "\n", result
     #If it returns 200 it means all has worked well
     messagebox.showinfo(title="Conversion",message=display)
